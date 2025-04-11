@@ -1,1 +1,13 @@
 @import 'tailwindcss';
+
+@theme {
+  --font-twitch:
+    'Inter Variable', 'Roobert', 'Helvetica Neue', 'Helvetica', 'Arial',
+    'sans-serif';
+}
+
+@layer base {
+  body {
+    @apply font-twitch bg-slate-800 text-white;
+  }
+}

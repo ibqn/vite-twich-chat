@@ -8,15 +8,30 @@ importers:
 
   .:
     dependencies:
+      '@faker-js/faker':
+        specifier: ^9.6.0
+        version: 9.6.0
+      '@fontsource-variable/inter':
+        specifier: ^5.2.5
+        version: 5.2.5
+      add:
+        specifier: ^2.0.6
+        version: 2.0.6
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      pnpm:
+        specifier: ^10.8.0
+        version: 10.8.0
       react:
         specifier: ^19.1.0
         version: 19.1.0
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-icons:
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.1.0)
       tailwind-merge:
         specifier: ^3.2.0
         version: 3.2.0
@@ -347,6 +362,13 @@ packages:
     resolution: {integrity: sha512-ZAoA40rNMPwSm+AeHpCq8STiNAwzWLJuP8Xv4CHIc9wv/PSuExjMrmjfYNj682vW0OOiZ1HKxzvjQr9XZIisQA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@faker-js/faker@9.6.0':
+    resolution: {integrity: sha512-3vm4by+B5lvsFPSyep3ELWmZfE3kicDtmemVpuwl1yH7tqtnHdsA6hG8fbXedMVdkzgtvzWoRgjSB4Q+FHnZiw==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+
+  '@fontsource-variable/inter@5.2.5':
+    resolution: {integrity: sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==}
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -666,6 +688,9 @@ packages:
     resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  add@2.0.6:
+    resolution: {integrity: sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==}
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -1091,6 +1116,11 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
+  pnpm@10.8.0:
+    resolution: {integrity: sha512-DoJxTRtbQ8dGEBk8sgc0iXwdAN6J0OGEIK68WXf6E9eAqcsFc0Yk6B69gcyHbNRkeUhQZBxIuVRDJrViLKKZcQ==}
+    engines: {node: '>=18.12'}
+    hasBin: true
+
   postcss@8.5.3:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
@@ -1170,6 +1200,11 @@ packages:
     resolution: {integrity: sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==}
     peerDependencies:
       react: ^19.1.0
+
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
+    peerDependencies:
+      react: '*'
 
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
@@ -1571,6 +1606,10 @@ snapshots:
       '@eslint/core': 0.13.0
       levn: 0.4.1
 
+  '@faker-js/faker@9.6.0': {}
+
+  '@fontsource-variable/inter@5.2.5': {}
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -1864,6 +1903,8 @@ snapshots:
       acorn: 8.14.1
 
   acorn@8.14.1: {}
+
+  add@2.0.6: {}
 
   ajv@6.12.6:
     dependencies:
@@ -2269,6 +2310,8 @@ snapshots:
 
   picomatch@2.3.1: {}
 
+  pnpm@10.8.0: {}
+
   postcss@8.5.3:
     dependencies:
       nanoid: 3.3.11
@@ -2291,6 +2334,10 @@ snapshots:
     dependencies:
       react: 19.1.0
       scheduler: 0.26.0
+
+  react-icons@5.5.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
 
   react-refresh@0.14.2: {}
 

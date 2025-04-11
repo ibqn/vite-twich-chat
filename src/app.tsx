@@ -1,3 +1,9 @@
 export const App = () => {
-  return <div className="text-3xl font-bold underline">hello</div>
+  return (
+    <div className="grid min-h-screen place-items-center">
+      <h2 className="text-4xl text-blue-500">
+        Sphinx of black quartz, judge my vow.
+      </h2>
+    </div>
+  )
 }
