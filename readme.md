@@ -1,1 +1,3 @@
-## Vite based template for react and tailwind
+## twitch chat simulation
+
+![Screenshot](./screenshot.png)
