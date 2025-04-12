@@ -1,3 +1,18 @@
-export const ChatMessagesBox = () => {
-  return <div className="h-[70vh] overflow-auto">chat messages box</div>
+import type { ChatMessage as ChatMessageType } from '@/types'
+import { ChatMessage } from './chat-message'
+
+type Props = {
+  messages: ChatMessageType[]
+}
+
+export const ChatMessagesBox = ({ messages }: Props) => {
+  const MessageList = messages.map((message) => (
+    <ChatMessage key={message.id} message={message} className="mb-1" />
+  ))
+
+  return (
+    <div className="h-[70vh] overflow-auto">
+      <div className="flex flex-col gap-2 p-2">{MessageList}</div>
+    </div>
+  )
 }
