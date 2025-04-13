@@ -7,6 +7,8 @@ import type {
   SocketData,
 } from "@/types"
 
+const allowedOrigin = process.env.ALLOWED_ORIGIN ?? "http://localhost:5173"
+
 const httpServer = createServer()
 const io = new Server<
   ClientToServerEvents,
@@ -15,7 +17,7 @@ const io = new Server<
   SocketData
 >(httpServer, {
   cors: {
-    origin: process.env.AllOWED_ORIGIN ?? "http://localhost:5137",
+    origin: [allowedOrigin],
   },
 })
 
