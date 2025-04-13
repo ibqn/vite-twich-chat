@@ -15,6 +15,10 @@
     "baseUrl": ".",
     "rootDir": ".",
 
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
