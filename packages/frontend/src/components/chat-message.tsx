@@ -30,7 +30,7 @@ export const ChatMessage = ({ className, message, ...props }: Props) => {
         className
       )}
     >
-      <div className="inline-flex items-baseline gap-2">
+      <div className="inline-flex items-baseline gap-1">
         {Badges}
         {Author}
       </div>
