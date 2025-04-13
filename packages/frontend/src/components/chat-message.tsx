@@ -34,7 +34,7 @@ export const ChatMessage = ({ className, message, ...props }: Props) => {
         {Badges}
         {Author}
       </div>
-      <span className="ml-3 break-words text-slate-400">{message.content}</span>
+      <span className="break-words text-slate-400">: {message.content}</span>
     </div>
   )
 }
