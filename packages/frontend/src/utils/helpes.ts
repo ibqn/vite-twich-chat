@@ -1,16 +1,12 @@
 import { faker } from '@faker-js/faker'
-import { Badge, ChatMessage } from '@/types'
+import type { User, ChatMessage } from '@/types'
+import { Badge } from '@/types'
 
 export const generateFakeChatMessage = (): ChatMessage => {
   return {
     id: faker.string.uuid(),
     content: faker.lorem.sentence(),
-    author: {
-      id: faker.string.uuid(),
-      username: faker.internet.username(),
-      rgbColor: faker.color.rgb(),
-      badges: generateFakeBadges(),
-    },
+    user: generateUser(),
   }
 }
 
@@ -25,3 +21,10 @@ export const generateFakeBadges = (): Badge[] => {
     badge(Badge.turbo, 0.1),
   ].filter(Boolean) as Badge[]
 }
+
+export const generateUser = (): User => ({
+  id: faker.string.uuid(),
+  username: faker.internet.username(),
+  rgbColor: faker.color.rgb(),
+  badges: generateFakeBadges(),
+})

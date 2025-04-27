@@ -7,7 +7,7 @@ type Props = {
 } & ComponentProps<'div'>
 
 export const ChatMessage = ({ className, message, ...props }: Props) => {
-  const Badges = message.author.badges.map((badge, index) => (
+  const Badges = message.user.badges.map((badge, index) => (
     <img
       key={index}
       src={`/badges/${badge}.png`}
@@ -16,9 +16,9 @@ export const ChatMessage = ({ className, message, ...props }: Props) => {
     />
   ))
 
-  const Author = (
-    <span className="font-semibold" style={{ color: message.author.rgbColor }}>
-      {message.author.username}
+  const User = (
+    <span className="font-semibold" style={{ color: message.user.rgbColor }}>
+      {message.user.username}
     </span>
   )
 
@@ -32,7 +32,7 @@ export const ChatMessage = ({ className, message, ...props }: Props) => {
     >
       <div className="inline-flex items-baseline gap-1">
         {Badges}
-        {Author}
+        {User}
       </div>
       <span className="break-words text-slate-400">: {message.content}</span>
     </div>

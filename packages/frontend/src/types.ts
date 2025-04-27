@@ -1,10 +1,10 @@
 export type ChatMessage = {
   id: string
   content: string
-  author: Author
+  user: User
 }
 
-export type Author = {
+export type User = {
   id: string
   username: string
   rgbColor: string

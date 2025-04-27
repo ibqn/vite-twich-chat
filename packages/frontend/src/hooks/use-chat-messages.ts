@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const welcomeMessage: ChatMessage = {
   id: 'welcome-message',
-  author: {
+  user: {
     id: 'chat-bot',
     rgbColor: 'darkorchid',
     badges: [Badge.moderator],
