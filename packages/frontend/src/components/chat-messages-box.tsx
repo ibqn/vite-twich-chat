@@ -11,7 +11,7 @@ export const ChatMessagesBox = ({ messages }: Props) => {
   ))
 
   return (
-    <div className="h-[70vh] overflow-auto">
+    <div className="flex h-[70vh] overflow-auto">
       <div className="flex flex-col gap-1 p-2">{MessageList}</div>
     </div>
   )
