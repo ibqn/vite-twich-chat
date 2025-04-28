@@ -1,5 +1,5 @@
 import type { ChatMessage as ChatMessageType } from '@/types'
-import { ChatMessage } from './chat-message'
+import { ChatMessage } from '@/components/chat-message'
 
 type Props = {
   messages: ChatMessageType[]
