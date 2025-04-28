@@ -7,19 +7,37 @@ export const App = () => {
   const [usernameSelected, setUsernameSelected] = useState(false)
 
   useEffect(() => {
-    socket.auth = {
-      username: 'user',
+    const sessionId = localStorage.getItem('sessionId')
+    if (sessionId) {
+      setUsernameSelected(true)
+      socket.auth = { sessionId }
+      socket.connect()
     }
-    socket.connect()
+
+    socket.on('session', ({ sessionId, userId }) => {
+      // attach the session ID to the next reconnection attempts
+      socket.auth = { sessionId }
+      localStorage.setItem('sessionId', sessionId)
+      socket.data = { userId }
+    })
+
+    socket.on('connect_error', (error) => {
+      if (error.message === 'invalid username') {
+        setUsernameSelected(false)
+      }
+    })
 
     return () => {
-      socket.disconnect()
+      socket.off('connect_error')
+      socket.off('session')
     }
   }, [])
 
   const onUsernameSelected = (username: string) => {
-    console.log('Username selected:', username)
+    console.log('Username selected', username)
     setUsernameSelected(true)
+    socket.auth = { username }
+    socket.connect()
   }
 
   return (

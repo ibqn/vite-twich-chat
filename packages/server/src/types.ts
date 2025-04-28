@@ -1,4 +1,6 @@
-export interface ServerToClientEvents {}
+export interface ServerToClientEvents {
+  session: (data: { sessionId: string; userId: string }) => void
+}
 
 export interface ClientToServerEvents {}
 
