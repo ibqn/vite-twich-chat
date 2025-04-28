@@ -49,7 +49,7 @@ export const SelectUsername = ({ onSelect }: Props) => {
           Join
         </button>
         {errors.username && (
-          <p className="text-red-700">
+          <p className="text-sm text-red-700">
             Username is required and must be between 3 and 20 characters.
           </p>
         )}
