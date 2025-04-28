@@ -6,7 +6,7 @@ type FormData = {
   username: string
 }
 
-const usernameValidation = z.object({
+const usernameSchema = z.object({
   username: z
     .string()
     .min(3, 'Username must be at least 3 characters long')
@@ -26,7 +26,7 @@ export const SelectUsername = ({ onSelect }: Props) => {
     defaultValues: {
       username: '',
     },
-    resolver: zodResolver(usernameValidation),
+    resolver: zodResolver(usernameSchema),
   })
 
   const onSubmit = handleSubmit(({ username }) => {
@@ -48,12 +48,14 @@ export const SelectUsername = ({ onSelect }: Props) => {
           name="username"
           placeholder="Enter your username"
         />
+
         {errors.username && (
           <p className="text-sm text-red-700">
             {errors.username?.message ??
               'Username is required and must be between 3 and 20 characters.'}
           </p>
         )}
+
         <button
           type="submit"
           className="self-end rounded-sm bg-purple-500 px-4 py-2"
