@@ -1,8 +1,17 @@
 import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
 type FormData = {
   username: string
 }
+
+const usernameValidation = z.object({
+  username: z
+    .string()
+    .min(3, 'Username must be at least 3 characters long')
+    .max(20, 'Username must be at most 20 characters long'),
+})
 
 type Props = {
   onSelect: (username: string) => void
@@ -17,6 +26,7 @@ export const SelectUsername = ({ onSelect }: Props) => {
     defaultValues: {
       username: '',
     },
+    resolver: zodResolver(usernameValidation),
   })
 
   const onSubmit = handleSubmit(({ username }) => {
@@ -34,11 +44,7 @@ export const SelectUsername = ({ onSelect }: Props) => {
         <input
           type="text"
           className="w-full rounded bg-slate-700 p-2 focus:ring-2 focus:ring-purple-500 focus:outline-none"
-          {...register('username', {
-            required: true,
-            minLength: 3,
-            maxLength: 20,
-          })}
+          {...register('username')}
           name="username"
           placeholder="Enter your username"
         />
