@@ -48,17 +48,18 @@ export const SelectUsername = ({ onSelect }: Props) => {
           name="username"
           placeholder="Enter your username"
         />
+        {errors.username && (
+          <p className="text-sm text-red-700">
+            {errors.username?.message ??
+              'Username is required and must be between 3 and 20 characters.'}
+          </p>
+        )}
         <button
           type="submit"
           className="self-end rounded-sm bg-purple-500 px-4 py-2"
         >
           Join
         </button>
-        {errors.username && (
-          <p className="text-sm text-red-700">
-            Username is required and must be between 3 and 20 characters.
-          </p>
-        )}
       </form>
     </div>
   )
